@@ -119,6 +119,6 @@ class HIDRaw(object):
         """
         length += 1
         buf = ctypes.create_string_buffer(length)
-        buf[0] = chr(report_num)
+        buf[0] = report_num
         self._ioctl(_HIDIOCGFEATURE(length), buf, True)
         return buf.value
